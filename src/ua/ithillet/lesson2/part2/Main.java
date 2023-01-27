@@ -4,14 +4,14 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Cat catBars = new Cat();
+        Cat catBars = new Cat("Barsik");
 
-        catBars.run(178, "Barsik");
+        catBars.run(178);
 
-        Dog dogBobik = new Dog();
+        Dog dogBobik = new Dog("Bobik");
 
-        dogBobik.run(400, "Bobik");
+        dogBobik.run(400);
 
-        dogBobik.swim(9, "Bobik");
+        dogBobik.swim(9);
     }
 }

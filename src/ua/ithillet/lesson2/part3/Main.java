@@ -3,14 +3,14 @@ package ua.ithillet.lesson2.part3;
 public class Main {
     public static void main(String[] args) {
 
-        Square sqr = new Square(5);
-        Triangle trgl = new Triangle(4, 6);
-        Circle crcl = new Circle(5.55);
+        var square = new Square(5);
+        var triangle = new Triangle(4, 6);
+        var circle = new Circle(5.55);
 
         double[] figures = new double[3];
-        figures[0] = sqr.getArea();
-        figures[1] = trgl.getArea();
-        figures[2] = crcl.getArea();
+        figures[0] = square.getArea();
+        figures[1] = triangle.getArea();
+        figures[2] = circle.getArea();
         double sumArea = 0;
         for (int i = 0; i < figures.length; i++) {
             sumArea = sumArea + figures[i];
