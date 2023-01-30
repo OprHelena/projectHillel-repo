@@ -12,4 +12,9 @@ public class Cat extends Animals {
             super.run(distance);
         }
     }
+
+    @Override
+    public void swim(int distance) {
+        System.out.println("Cat can not swim");
+    }
 }
