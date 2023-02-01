@@ -14,7 +14,7 @@ public class WorkWithString {
 
     public int findWordPosition(String source, String target) {
         if (source.contains(target)) {
-            return source.indexOf(target, 1);
+            return source.indexOf(target, 0);
         }
         return source.indexOf(target);
     }
