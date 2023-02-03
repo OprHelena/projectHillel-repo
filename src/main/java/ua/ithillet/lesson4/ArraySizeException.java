@@ -4,7 +4,7 @@ public class ArraySizeException extends IndexOutOfBoundsException{
     public ArraySizeException() {
     }
 
-    public ArraySizeException(String s) {
-        super(s);
+    public ArraySizeException(String message) {
+        super(message);
     }
 }

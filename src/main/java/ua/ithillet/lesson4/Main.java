@@ -10,15 +10,10 @@ public class Main {
 
         ArrayValueCalculator arrayValueCalculator = new ArrayValueCalculator();
 
-        try {
             try {
                 arrayValueCalculator.doCalc(array);
-            } catch (ArraySizeException | ArrayDataException ex) {
+            } catch (ArraySizeException | ArrayDataException | NumberFormatException ex) {
                 ex.printStackTrace();
             }
-        } catch (NullPointerException e) {
-            System.err.println("The cell of array is empty ");
-            e.printStackTrace();
-        }
     }
 }

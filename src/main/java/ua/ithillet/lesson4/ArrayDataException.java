@@ -4,7 +4,7 @@ public class ArrayDataException extends IllegalArgumentException{
     public ArrayDataException() {
     }
 
-    public ArrayDataException(String s) {
-        super(s);
+    public ArrayDataException(String message) {
+        super(message);
     }
 }
