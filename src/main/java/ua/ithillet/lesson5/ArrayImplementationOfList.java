@@ -1,11 +1,15 @@
 package ua.ithillet.lesson5;
 
-public class WorkWithArrays implements HillelList {
+public class ArrayImplementationOfList implements HillelList {
 
     private String[] array;
 
-    public WorkWithArrays() {
-        array = new String[0];
+    public ArrayImplementationOfList(String[] initial) {
+        array = initial;
+    }
+
+    public String[] getArray() {
+        return array;
     }
 
     @Override
@@ -24,7 +28,7 @@ public class WorkWithArrays implements HillelList {
     @Override
     public String remove(int index) {
         if (array == null || index < 0 || index >= array.length) {
-            return "Incorrect value. Try one more! ";
+            throw new RuntimeException();
         }
         String[] removeResult = new String[array.length - 1];
         String removedVal = array[index];
