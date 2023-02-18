@@ -14,8 +14,8 @@ public class WorkWithListCollection {
         return count;
     }
 
-    public static List<Integer> toList(ArrayList<Integer> list) {
-        List<Integer> targetList = new ArrayList<>(list);
+    public static List<Integer> toList(Integer[] list) {
+        List<Integer> targetList = new ArrayList<>(List.of(list));
         return targetList;
 
     }
@@ -23,12 +23,10 @@ public class WorkWithListCollection {
     public static List<Integer> findUnique(List<Integer> list) {
         List<Integer> uniqueList = new ArrayList<>();
         try {
-            for (int i : list) {
-                for (int j : list) {
-                    if (i == j && !uniqueList.contains(i)) {
+            for (Integer i : list) {
+                    if (!uniqueList.contains(i)) {
                         uniqueList.add(i);
                     }
-                }
             }
         } catch (RuntimeException ex) {
             ex.printStackTrace();
@@ -40,12 +38,7 @@ public class WorkWithListCollection {
         List<String> countUniqueWords = new ArrayList<>();
         List<String> result = new ArrayList<>();
         for (String str : list) {
-            int count = 0;
-            for (String sdf : list) {
-                if (str.equals(sdf)) {
-                    count++;
-                }
-            }
+            int count = countOccurrence(list, str);
             while (!countUniqueWords.contains(str)) {
                 result.add(str + ": " + count);
                 countUniqueWords.add(str);

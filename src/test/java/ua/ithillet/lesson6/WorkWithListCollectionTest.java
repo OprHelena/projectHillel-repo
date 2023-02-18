@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.*;
 
+import static org.hamcrest.MatcherAssert.*;
+import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class WorkWithListCollectionTest {
@@ -19,8 +21,9 @@ public class WorkWithListCollectionTest {
 
     @Test
     public void CheckToListMethod() {
-        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(112, 5, 9, 7, 9, 11, 23, 45, 2));
-        assertEquals(list, WorkWithListCollection.toList(list));
+        Integer[] list = {112, 5, 9, 7, 9, 11, 23, 45, 2};
+        assertEquals(Arrays.stream(list).toList(), WorkWithListCollection.toList(list));
+        assertThat(WorkWithListCollection.toList(list), containsInAnyOrder(Arrays.stream(list).toArray()));
     }
 
     @Test
@@ -53,6 +56,8 @@ public class WorkWithListCollectionTest {
                 Map.of("name", "cell", "countOccurrance", "1").toString(),
                 Map.of("name", "century", "countOccurrance", "1").toString());
 
-        assertEquals(WorkWithListCollection.findOccurrence(list), resultList);
+        assertEquals(WorkWithListCollection.findOccurrence(list), List.of(new WordOccurance("car", 8),new WordOccurance("rash", 4),
+                new WordOccurance("health", 1), new WordOccurance("book", 4), new WordOccurance("chariot", 2),
+                new WordOccurance("cell", 1), new WordOccurance("century", 1)));
     }
 }
